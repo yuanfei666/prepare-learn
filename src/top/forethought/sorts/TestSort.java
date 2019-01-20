@@ -22,7 +22,7 @@ public class TestSort {
        new  SimpleInsertSort().sort(data);
        long spent=System.currentTimeMillis()-start;
        RandomUtil.printArray(data);
-       System.out.println("耗时:"+spent);
+       System.out.println("耗时 :"+spent);
     }
     @Test
     //规模:1000 耗时:3
