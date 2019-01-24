@@ -1,4 +1,4 @@
-package top.forethought.sorts;
+package top.forethought.common.utils;
 /**
  * @author  wangwei
  * @date     2019/1/20 13:58
@@ -13,7 +13,7 @@ public class RandomUtil {
      * @param count
      * @return  产生 大小范围是 [from,to]的count个元素的int数组
      */
-  static   int [] randomInts(int from,int to,int count){
+  public static   int [] randomInts(int from, int to, int count){
         if(from>to){
             int temp=from;
             from=to;
@@ -28,7 +28,7 @@ public class RandomUtil {
         }
         return result;
     }
-    static void printArray(int []array){
+    public static void printArray(int[] array){
       StringBuilder builder=new StringBuilder();
       for(int i :array){
           builder.append(i).append(" ");

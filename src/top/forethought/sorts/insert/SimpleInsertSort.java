@@ -1,4 +1,4 @@
-package top.forethought.sorts;
+package top.forethought.sorts.insert;
 
 import top.forethought.sorts.interfaces.Sortable;
 
@@ -9,6 +9,7 @@ import top.forethought.sorts.interfaces.Sortable;
  * 排序思想:模拟摸牌,手中牌始终是有序的,新元素插入手中,需要判断是否需要挪动
  *        空间:o(1)
  *        时间:o(n^2)
+ *        稳定性:稳定
  */
 public class SimpleInsertSort implements Sortable{
     @Override
@@ -31,18 +32,8 @@ public class SimpleInsertSort implements Sortable{
         }
     }
     /**
-     * @author  wangwei
-     * @date     2019/1/20 13:52
-     * @methodDescription  将元素toBePut 放置在array的  [0,splitIndex)之间恰当的位置
-     *                   注意:[0,splitIndex)区间是有序的
-     *
+     * 思考简单插入排序的改进:
+     * 1,查找新元素的适合位置 时,需要o(n)次比较,可以使用二分查找,改进为lg(n)
+     * 2,减少排序的规模:使用希尔排序,划分组
      */
-    void putItIntoSorted(int []array,int splitIndex,int toBePut) {
-        int leftIndex = splitIndex-1;
-        while ((leftIndex >= 0) && (array[leftIndex] > toBePut)) {
-            array[leftIndex + 1] = array[leftIndex];
-            leftIndex--;
-        }
-         array[leftIndex+1]=toBePut;
-    }
 }
