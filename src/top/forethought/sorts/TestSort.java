@@ -3,6 +3,7 @@ package top.forethought.sorts;
 import org.junit.Test;
 import top.forethought.common.utils.RandomUtil;
 import top.forethought.designpattern.TimeLog;
+import top.forethought.sorts.exchangesort.BubbleSort;
 import top.forethought.sorts.insert.ShellSort;
 import top.forethought.sorts.insert.SimpleInsertSort;
 import top.forethought.sorts.interfaces.Sortable;
@@ -13,8 +14,8 @@ import java.util.Arrays;
 
 public class TestSort {
     private static final int MIN_NUMBER=1;
-    private static final int MAX_NUMBER=100;
-    private static final int NUMBER_COUNT=10;
+    private static final int MAX_NUMBER=1000;
+    private static final int NUMBER_COUNT=1000;
     private static final int []finalArray= RandomUtil.randomInts(MIN_NUMBER,MAX_NUMBER,NUMBER_COUNT);
    @Test
    // 规模 1000  耗时:7
@@ -91,6 +92,14 @@ public class TestSort {
         RandomUtil.printArray(data);
         Sortable mergeSort=TimeLog.getProxyInstance(MergeSort.class);
         mergeSort.sort(data);
+        RandomUtil.printArray(data);
+    }
+    @Test
+    public void testBubbleSort(){
+        int []data= Arrays.copyOf(finalArray,finalArray.length);
+        RandomUtil.printArray(data);
+        Sortable bubbleSort=TimeLog.getProxyInstance(BubbleSort.class);
+        bubbleSort.sort(data);
         RandomUtil.printArray(data);
     }
 }
