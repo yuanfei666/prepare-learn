@@ -34,7 +34,7 @@ public class TimeLog implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
           long start=System.currentTimeMillis();
          Object result = method.invoke(target, args); //执行代理对象的方法
-         logger.info("method:"+method.getName()+" ,execute time MillionsSeconds:"+(System.currentTimeMillis()-start));
+         logger.info("method:"+method.getName()+", class:"+target.getClass()+" ,execute time MillionsSeconds:"+(System.currentTimeMillis()-start));
         return result;
     }
     /**

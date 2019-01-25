@@ -4,6 +4,7 @@ import org.junit.Test;
 import top.forethought.common.utils.RandomUtil;
 import top.forethought.designpattern.TimeLog;
 import top.forethought.sorts.exchangesort.BubbleSort;
+import top.forethought.sorts.exchangesort.QuickSort;
 import top.forethought.sorts.insert.ShellSort;
 import top.forethought.sorts.insert.SimpleInsertSort;
 import top.forethought.sorts.interfaces.Sortable;
@@ -14,8 +15,8 @@ import java.util.Arrays;
 
 public class TestSort {
     private static final int MIN_NUMBER=1;
-    private static final int MAX_NUMBER=1000;
-    private static final int NUMBER_COUNT=1000;
+    private static final int MAX_NUMBER=100;
+    private static final int NUMBER_COUNT=100;
     private static final int []finalArray= RandomUtil.randomInts(MIN_NUMBER,MAX_NUMBER,NUMBER_COUNT);
    @Test
    // 规模 1000  耗时:7
@@ -53,6 +54,7 @@ public class TestSort {
       testSort.testSimpleInsertSort();
       testSort.testShellSort();
       testSort.testJdkSort();
+      testSort.testQkSort();
     }
     @Test
     public void testJdkSort(){
@@ -100,6 +102,15 @@ public class TestSort {
         RandomUtil.printArray(data);
         Sortable bubbleSort=TimeLog.getProxyInstance(BubbleSort.class);
         bubbleSort.sort(data);
+        RandomUtil.printArray(data);
+    }
+    @Test
+    public void testQkSort(){
+        int []data= Arrays.copyOf(finalArray,finalArray.length);
+//        int []data=new int[]{12,85,25,16,34,23,49,95,17,61};
+        RandomUtil.printArray(data);
+        Sortable qkSort=TimeLog.getProxyInstance(QuickSort.class);
+        qkSort.sort(data);
         RandomUtil.printArray(data);
     }
 }
