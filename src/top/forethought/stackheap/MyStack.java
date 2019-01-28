@@ -34,12 +34,12 @@ public class MyStack<T> {
         datas = new Object[MAX_SIZE];
     }
 
-    public MyStack(int initSzie) {
-        if (initSzie < 0) {
+    public MyStack(int initSize) {
+        if (initSize < 0) {
             throw new RuntimeException("stack size can not be A negative number");
         }
         top = 0;
-        size = initSzie;
+        size = initSize;
         datas = new Object[MAX_SIZE];
     }
 
@@ -92,6 +92,7 @@ public class MyStack<T> {
             System.out.println("top:"+stack.getTop()+"data:"+stack.pop());
         }
     }
+
 
 }
 /**
