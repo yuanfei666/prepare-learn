@@ -14,8 +14,10 @@ import java.util.logging.Logger;
  */
 /**
  * 设计模式:代理模式,此代理类来给目标类的方法增加执行时间
+ * //阿里巴巴开发手册要求:运用设计模式的类名需要将运用的设计模式名作为类名后缀,
+ * 方便理解
  */
-public class TimeLog implements InvocationHandler {
+public class TimeLogProxy implements InvocationHandler {
     private Logger logger = Logger.getLogger(this.getClass().getSimpleName());
     private Object target; // 代理目标
     private Object proxy; // 代理对象
@@ -48,10 +50,10 @@ public class TimeLog implements InvocationHandler {
      * @return
      */
     public synchronized static <T> T getProxyInstance(Class<T> clazz) {
-        TimeLog invoHandler = (TimeLog) invokHandlers.get(clazz);
+        top.forethought.designpattern.TimeLogProxy invoHandler = (top.forethought.designpattern.TimeLogProxy) invokHandlers.get(clazz);
 
         if (null == invoHandler) {
-            invoHandler = new TimeLog();
+            invoHandler = new top.forethought.designpattern.TimeLogProxy();
             try {
                 T tar = clazz.newInstance();
                 invoHandler.setTarget(tar);

@@ -2,7 +2,6 @@ package top.forethought.sorts;
 
 import org.junit.Test;
 import top.forethought.common.utils.RandomUtil;
-import top.forethought.designpattern.TimeLog;
 import top.forethought.sorts.exchangesort.BubbleSort;
 import top.forethought.sorts.exchangesort.QuickSort;
 import top.forethought.sorts.insert.ShellSort;
@@ -81,7 +80,7 @@ public class TestSort {
         int []data= Arrays.copyOf(finalArray,finalArray.length);
         RandomUtil.printArray(data);
     //    long start=System.currentTimeMillis();
-       Sortable simpleSelectSort=TimeLog.getProxyInstance(SimpleSelectSort.class);
+       Sortable simpleSelectSort= top.forethought.designpattern.TimeLogProxy.getProxyInstance(SimpleSelectSort.class);
 //        new SimpleSelectSort().sort(data);
         simpleSelectSort.sort(data);
        // long spent=System.currentTimeMillis()-start;
@@ -92,7 +91,7 @@ public class TestSort {
     public void testMergeSort(){
         int []data= Arrays.copyOf(finalArray,finalArray.length);
         RandomUtil.printArray(data);
-        Sortable mergeSort=TimeLog.getProxyInstance(MergeSort.class);
+        Sortable mergeSort= top.forethought.designpattern.TimeLogProxy.getProxyInstance(MergeSort.class);
         mergeSort.sort(data);
         RandomUtil.printArray(data);
     }
@@ -100,7 +99,7 @@ public class TestSort {
     public void testBubbleSort(){
         int []data= Arrays.copyOf(finalArray,finalArray.length);
         RandomUtil.printArray(data);
-        Sortable bubbleSort=TimeLog.getProxyInstance(BubbleSort.class);
+        Sortable bubbleSort= top.forethought.designpattern.TimeLogProxy.getProxyInstance(BubbleSort.class);
         bubbleSort.sort(data);
         RandomUtil.printArray(data);
     }
@@ -109,7 +108,7 @@ public class TestSort {
         int []data= Arrays.copyOf(finalArray,finalArray.length);
 //        int []data=new int[]{12,85,25,16,34,23,49,95,17,61};
         RandomUtil.printArray(data);
-        Sortable qkSort=TimeLog.getProxyInstance(QuickSort.class);
+        Sortable qkSort= top.forethought.designpattern.TimeLogProxy.getProxyInstance(QuickSort.class);
         qkSort.sort(data);
         RandomUtil.printArray(data);
     }

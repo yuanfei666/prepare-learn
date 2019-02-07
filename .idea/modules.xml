@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/forethought.iml" filepath="$PROJECT_DIR$/forethought.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/forethought.iml" filepath="$PROJECT_DIR$/src/forethought.iml" />
     </modules>
   </component>
 </project>
