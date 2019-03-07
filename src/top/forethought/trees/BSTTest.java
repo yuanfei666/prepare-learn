@@ -30,8 +30,8 @@ public class BSTTest {
      BTreeNode.inorderVisit(tree,queue);
       System.out.println(queue.toString());
        Queue<Integer> queue2=new ArrayDeque<>();
-       System.out.println("删除2 之后-----------");
-       tree=BST.deleteNode(tree,2);
+       System.out.println("删除10 之后-----------");
+       tree=BST.deleteNode(tree,10);
        BTreeNode.inorderVisit(tree,queue2);
        System.out.println(queue2.toString());
     }

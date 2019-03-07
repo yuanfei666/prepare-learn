@@ -1,6 +1,6 @@
 package top.forethought.javagrammer;
 
-public class Son extends Parent {
+public class Son extends Parent  implements MyInterface{
     static {
         System.out.println(" static block 1 son");
     }
@@ -23,5 +23,11 @@ public class Son extends Parent {
         Son son=new Son();
         System.out.println("--------分割线---------");
         son=new Son();
+
+    }
+
+    @Override
+    public void m1() {
+
     }
 }
